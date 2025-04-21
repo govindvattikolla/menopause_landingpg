@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gift of Menopause</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f8f3ed;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.5s ease, padding 0.5s ease;
+            z-index: 1000;
+        }
+
+        .header.scrolled {
+            background-color: rgba(248, 243, 237, 0.95);
+            padding: 12px 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            margin-left: 10px;
+            font-size: 22px;
+            font-weight: 600;
+            color: #9c5283;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #9c5283;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #9c5283;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .get-started-btn {
+            background-color: #9c5283;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(156, 82, 131, 0.2);
+        }
+
+        .get-started-btn:hover {
+            background-color: #854570;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(156, 82, 131, 0.3);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #9c5283;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 40px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 30px;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
+            margin-left: 100px;
+
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            font-weight: 700;
+            color: #333;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #9c5283;
+            position: relative;
+            display: inline-block;
+        }
+
+        .highlight:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            bottom: 5px;
+            left: 0;
+            background-color: rgba(156, 82, 131, 0.2);
+            z-index: -1;
+            border-radius: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .primary-btn {
+            background-color: #9c5283;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(156, 82, 131, 0.2);
+        }
+
+        .primary-btn:hover {
+            background-color: #854570;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(156, 82, 131, 0.3);
+        }
+
+        .secondary-btn {
+            background-color: transparent;
+            color: #9c5283;
+            border: 2px solid #9c5283;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .secondary-btn:hover {
+            background-color: rgba(156, 82, 131, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Animated Elements */
+        .floating-shape {
+            position: absolute;
+            opacity: 0.8;
+            z-index: 1;
+        }
+
+        .shape1 {
+            top: 15%;
+            left: 8%;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(156, 82, 131, 0.2);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .shape2 {
+            bottom: 20%;
+            right: 10%;
+            width: 80px;
+            height: 80px;
+            background-color: rgba(156, 82, 131, 0.15);
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            animation: float 12s ease-in-out infinite alternate;
+        }
+
+        .shape3 {
+            top: 60%;
+            left: 15%;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(156, 82, 131, 0.1);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: float 10s ease-in-out infinite alternate-reverse;
+        }
+
+        .shape4 {
+            top: 30%;
+            right: 20%;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(156, 82, 131, 0.15);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: float 9s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            50% {
+                transform: translate(15px, -15px) rotate(10deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+        }
+
+        /* Scroll Down Indicator */
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-down:hover {
+            opacity: 1;
+        }
+
+        .scroll-down span {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #9c5283;
+        }
+
+        .mouse {
+            width: 28px;
+            height: 45px;
+            border: 2px solid #9c5283;
+            border-radius: 25px;
+            position: relative;
+        }
+
+        .wheel {
+            width: 6px;
+            height: 10px;
+            background-color: #9c5283;
+            border-radius: 3px;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scroll 2s ease-in-out infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(-50%) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-50%) translateY(15px);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                margin: 0 auto 40px;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 100px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M20 5C11.7157 5 5 11.7157 5 20C5 28.2843 11.7157 35 20 35C28.2843 35 35 28.2843 35 20C35 11.7157 28.2843 5 20 5Z" stroke="#9c5283" stroke-width="2" fill="rgba(156, 82, 131, 0.1)"/>
+                <path d="M15 16C16.6569 16 18 14.6569 18 13C18 11.3431 16.6569 10 15 10C13.3431 10 12 11.3431 12 13C12 14.6569 13.3431 16 15 16Z" fill="#9c5283"/>
+                <path d="M25 16C26.6569 16 28 14.6569 28 13C28 11.3431 26.6569 10 25 10C23.3431 10 22 11.3431 22 13C22 14.6569 23.3431 16 25 16Z" fill="#9c5283"/>
+                <path d="M14 23C14 27.4183 16.6863 31 20 31C23.3137 31 26 27.4183 26 23" stroke="#9c5283" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span class="logo-text">MIDLIFE COACHING</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+            
+            <a href="#" class="nav-link">Blog</a>
+            <a href="#" class="nav-link">Contact</a>
+        </nav>
+        <button class="get-started-btn">Take quiz</button>
+        <button class="mobile-menu-btn">☰</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-shape shape1"></div>
+        <div class="floating-shape shape2"></div>
+        <div class="floating-shape shape3"></div>
+        <div class="floating-shape shape4"></div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <p>1-ON-1 MIDLIFE COACHING </p>
+                <h1>ARE YOU IN <span class="highlight"> PERIMENOPAUSE?</span> </h1>
+                <p>Discover a new chapter of life with strength, wisdom, and empowerment. Our community helps you transform this natural transition into an opportunity for growth and self-discovery.</p>
+                <div class="cta-buttons">
+                    <button class="primary-btn">Take the 5 mins Perimenopause Quiz</button>
+                    
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="./images/menopause (Hero img).png" alt="Woman embracing menopause journey">
+            </div>
+        </div>
+
+        <div class="scroll-down">
+            <span>Scroll Down</span>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // GSAP Animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hero section animations
+            gsap.from('.hero-text h1', {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                ease: 'power3.out'
+            });
+            
+            gsap.from('.hero-text p', {
+                opacity: 0,
+                y: 30,
+                duration: 1,
+                delay: 0.3,
+                ease: 'power3.out'
+            });
+            
+            gsap.from('.cta-buttons', {
+                opacity: 0,
+                y: 30,
+                duration: 1,
+                delay: 0.6,
+                ease: 'power3.out'
+            });
+            
+            gsap.from('.hero-image', {
+                opacity: 0,
+                x: 50,
+                duration: 1.2,
+                delay: 0.2,
+                ease: 'power3.out'
+            });
+            
+            // Floating shapes animation enhancement
+            gsap.to('.floating-shape', {
+                duration: 2,
+                opacity: 1,
+                stagger: 0.2,
+                ease: 'power1.inOut'
+            });
+            
+            // Scroll down indicator animation
+            gsap.from('.scroll-down', {
+                opacity: 0,
+                y: -20,
+                duration: 1,
+                delay: 1.5,
+                ease: 'power3.out'
+            });
+            
+            // Nav links hover effect
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    gsap.to(link, {
+                        color: '#9c5283',
+                        duration: 0.3
+                    });
+                });
+                
+                link.addEventListener('mouseleave', () => {
+                    gsap.to(link, {
+                        color: '#333',
+                        duration: 0.3
+                    });
+                });
+            });
+        });
+
+        // Mobile menu toggle functionality would be added here
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            alert('Mobile menu would toggle open here');
+            // Implementation of mobile menu would go here
+        });
+
+        // Smooth scroll for the scroll down button
+        document.querySelector('.scroll-down').addEventListener('click', function() {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

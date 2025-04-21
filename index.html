@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gift of Menopause</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* === Base Styles === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f3ed;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: #9c5283;
+            color: white;
+            box-shadow: 0 4px 15px rgba(156, 82, 131, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: #864670;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(156, 82, 131, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #9c5283;
+            border: 2px solid #9c5283;
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(156, 82, 131, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .highlight {
+            color: #9c5283;
+            position: relative;
+            display: inline-block;
+        }
+
+        .highlight:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            bottom: 5px;
+            left: 0;
+            background-color: rgba(156, 82, 131, 0.2);
+            z-index: -1;
+            border-radius: 10px;
+        }
+
+        /* === Header Styles === */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(248, 243, 237, 0.95);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(156, 82, 131, 0.2);
+            border-radius: 50%;
+            position: relative;
+            margin-right: 10px;
+        }
+
+        .logo-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            border: 2px solid #9c5283;
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 600;
+            color: #9c5283;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #9c5283;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #9c5283;
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #9c5283;
+            cursor: pointer;
+        }
+
+        /* === Hero Section === */
+         .hero {
+            padding-top: 150px;
+            padding-bottom: 100px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%);
+            height:100vh
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .hero-image img {
+            border-radius: 10px;
+            /* box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1); */
+            height:90vh;
+            margin-left: 10vw;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        /* === Features Section === */
+        .features {
+            background-color: #fff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: #f8f3ed;
+            border-radius: 10px;
+            padding: 30px;
+            /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(156, 82, 131, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon i {
+            font-size: 24px;
+            color: #9c5283;
+        }
+
+        /* === About Section === */
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            border-radius: 10px;
+            height:80vh
+            /* box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1); */
+        }
+
+        .about-content {
+            flex: 1;
+        }
+        .about-content h4{
+            text-align: center;
+            margin-top: -45px;
+            margin-bottom: 30px;
+        }
+
+        /* about course   */
+
+        .about-process {
+  padding: 80px 20px;
+  background: #f9f7f8;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  color: #9c5283;
+}
+
+.process-wrapper {
+  position: relative;
+}
+
+.progress-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: #9c5283;
+  transform: translateX(-50%);
+}
+
+.process-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.process-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+}
+
+.process-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.process-item img {
+  width: 35%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.process-content {
+  width: 48%;
+  margin-left: 3vw;
+}
+
+.process-content h3 {
+  color: #9c5283;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.process-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #9c5283;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #732b5b;
+}
+
+/* Dot circles on the progress line */
+.process-item::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 4px solid #9c5283;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* how it works */
+
+
+
+.how-it-works {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.how-it-works h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.flip-card {
+    background: transparent;
+    width: 250px;
+    height: 200px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 2px solid #ff00aa;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.flip-card-front {
+    background-color: #9c5283;
+    color: black;
+}
+
+.flip-card-front h3 {
+    font-size: 1.8rem;
+}
+
+.flip-card-back {
+    background-color: #ff00aa;
+    color: white;
+    transform: rotateY(180deg);
+    font-size: 1rem;
+}
+
+.flip-card-back strong {
+    color: yellow;
+}
+
+
+        /* === Testimonials Section === */
+        .testimonials {
+            background-color: #fff;
+        }
+
+        .testimonials-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background-color: #f8f3ed;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .testimonial-card:before {
+            content: '\201C';
+            font-size: 80px;
+            font-family: Georgia, serif;
+            color: rgba(156, 82, 131, 0.2);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            z-index: 0;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* === CTA Section === */
+        .cta {
+            background-color: #9c5283;
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .cta h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-white {
+            background-color: white;
+            color: #9c5283;
+        }
+
+        .btn-white:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline-white {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline-white:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* === Resources Section === */
+       .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.resource-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-card:hover {
+    transform: translateY(-10px);
+}
+
+.resource-image {
+    height: 150px;
+    background-color: #ddd;
+    position: relative;
+    overflow: hidden;
+}
+
+.resource-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* ensures the image fits perfectly in the box */
+    display: block;
+}
+
+.resource-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.resource-tag {
+    display: inline-block;
+    background-color: rgba(156, 82, 131, 0.2);
+    color: #9c5283;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    width:5vw
+}
+
+.resource-card h3 {
+    margin-bottom: 10px;
+}
+
+.resource-card p {
+    margin-bottom: 20px;
+}
+
+.resource-link {
+    color: #9c5283;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.resource-link i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.resource-link:hover i {
+    transform: translateX(5px);
+}
+
+/* how the program works */
+.pillars-timeline {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.pillars-timeline h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.pillars-timeline h2 span {
+    color: #e6007e; /* vibrant pink */
+}
+
+.timeline-container {
+    position: relative;
+    margin-left: 20px;
+    border-left: 4px solid #e6007e;
+    padding-left: 20px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-dot {
+    width: 16px;
+    height: 16px;
+    background: #e6007e;
+    border-radius: 50%;
+    position: absolute;
+    left: -30px;
+    top: 5px;
+    border: 4px solid white;
+    box-shadow: 0 0 0 4px #e6007e33;
+}
+
+.timeline-content {
+    background: #fff0f6;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: #9c5283;
+    margin-bottom: 8px;
+}
+
+.timeline-content p {
+    margin: 0;
+    color: #555;
+}
+
+/* Mobile Friendly */
+@media (max-width: 600px) {
+    .timeline-container {
+        border-left: 3px solid #e6007e;
+        padding-left: 15px;
+    }
+
+    .timeline-dot {
+        left: -25px;
+    }
+}
+
+/* Faq section */
+
+.faq-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff0f6;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #9c5283;
+    margin-bottom: 30px;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.faq-item input {
+    display: none;
+}
+
+.faq-question {
+    display: block;
+    padding: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    color: #333;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.faq-item input:checked + .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding: 0 20px;
+}
+
+.faq-item input:checked ~ .faq-answer {
+    max-height: 500px;  /* Enough space for content */
+    padding: 15px 20px;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: #555;
+}
+
+
+
+        /* === Newsletter Section === */
+        .newsletter {
+            background-color: #f0e9e0;
+            padding: 60px 0;
+        }
+
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 20px;
+        }
+
+        .newsletter p {
+            margin-bottom: 30px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 16px;
+        }
+
+        .newsletter-btn {
+            background-color: #9c5283;
+            color: white;
+            border: none;
+            border-radius: 0 30px 30px 0;
+            padding: 0 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            background-color: #864670;
+        }
+
+        .privacy-text {
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* === Footer === */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: #9c5283;
+            transform: translateY(-3px);
+        }
+
+        .footer-heading {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .footer-heading:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: #9c5283;
+            bottom: -8px;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: #9c5283;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        /* === Responsive Styles === */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-container,
+            .about-container {
+                flex-direction: column;
+            }
+
+            .hero-content,
+            .about-content {
+                padding-right: 0;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+
+            .hero p {
+                margin: 0 auto 30px;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .features-grid,
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-input {
+                border-radius: 30px;
+                margin-bottom: 15px;
+            }
+
+            .newsletter-btn {
+                border-radius: 30px;
+                padding: 15px 30px;
+                width: 100%;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <div class="logo-circle"></div>
+                </div>
+                <div class="logo-text">MIDLIFE COACHING</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#resources">Blog</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li style="margin-top: -10px;"><button class="btn btn-primary">Take the Quiz</button></li>
+                </ul>
+            
+                <button class="mobile-toggle">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Embrace The <span class="highlight">Journey</span> Of Menopause</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem quam voluptatibus ut corrupti officiis aliquam commodi alias cumque, porro eos! Sequi possimus temporibus consectetur sint, molestiae ducimus doloribus corporis accusantium.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">Take the 5-Mins Perimenopause Quiz</a>
+                    <!-- <a href="#" class="btn btn-secondary">Learn More</a> -->
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://thegiftofmenopause.com/wp-content/uploads/2024/11/wepik-untitled-project-20241112084455xn7G-683x1024.png" alt="Woman embracing menopause journey">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>PERIMENOPAUSE  <span class="highlight">CHANGES HAPPEN TO </span> EVERY WOMAN.</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Stress</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat necessitatibus sint suscipit voluptatibus dolorem!</p>
+                </div>
+            
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-meh"></i>
+                    </div>
+                    <h3>Mood swings</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat necessitatibus sint suscipit voluptatibus dolorem!</p>
+                </div>
+            
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-weight"></i>
+                    </div>
+                    <h3>Sudden Weight Gain</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat necessitatibus sint suscipit voluptatibus dolorem!</p>
+                </div>
+            
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-times"></i>
+                    </div>
+                    <h3>Irregular periods</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat necessitatibus sint suscipit voluptatibus dolorem!</p>
+                </div>
+            
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-temperature-high"></i>
+                    </div>
+                    <h3>Hot flashes and night sweats</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat necessitatibus sint suscipit voluptatibus dolorem!</p>
+                </div>
+            
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart-broken"></i>
+                    </div>
+                    <h3>Reduced sex drive</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat necessitatibus sint suscipit voluptatibus dolorem!</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="./images/menopause (Hero img).png" alt="About The Gift of Menopause" >
+            </div>
+            <div class="about-content">
+                <h2>Meet coach <span class="highlight">Geeta</span></h2>
+                <h4>Our Menopause Coach</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iste, nemo optio, obcaecati nam numquam voluptatibus ipsam iusto cumque</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod laudantium, molestiae expedita quam, suscipit, hic culpa sit rerum totam natus velit doloremque. Accusamus explicabo delectus inventore consectetur ea deserunt autem!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil tenetur error quidem pariatur illum incidunt aperiam, quas porror</p>
+                <a href="#" class="btn btn-primary">Learn More About Us</a>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- aboutcourse -->
+
+   <section class="about-process">
+     <!-- what to do about it -->
+     <h1 class="section-title">SO WHAT TO DO ABOUT IT?</h1>
+     <p style="width: 50vw; text-align: center;margin-left: 22vw; ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil praesentium non velit, suscipit consectetur doloribus quae, ab similique repellendus placeat quis sit voluptas dolore dolores quos tenetur. Quibusdam, nemo aut!</p>
+  <div class="container">
+    
+
+    <div class="process-wrapper">
+      <div class="progress-line"></div>
+
+      <div class="process-grid">
+        <div class="process-item">
+          <img src="./images/menopause (Hero img).png" alt="image-1 " />
+          <div class="process-content">
+            <h3>INTRODUCING:
+                  THE GIFT OF PERIMENOPAUSE COACHING  WITH GEETA</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, saepe praesentium. Dignissimos quibusdam </p>
+            <!-- <a href="#" class="btn">Learn More</a> -->
+          </div>
+        </div>
+
+        <div class="process-item">
+          <img src="./images/Butterfly-1 (menopause).jpg" alt="image 2" />
+          <div class="process-content">
+            <h3>A 6-Months Personal
+                  Transformation Program</h3>
+             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, saepe praesentium. Dignissimos quibusdam </p>
+            <!-- <a href="#" class="btn">Learn More</a> -->
+          </div>
+        </div>
+
+        <div class="process-item">
+          <img src="./images/Pillars-6 (menopause).jpg" alt="img 3" />
+          <div class="process-content">
+            <h3>
+              I Lead You Through The 5 Pillars of Perimenopause.</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, saepe praesentium. Dignissimos quibusdam </p>
+            <!-- <a href="#" class="btn">Learn More</a> -->
+          </div>
+        </div>
+
+        <div class="process-item">
+          <img src="./images/women (menopause).jpg" alt="img 4" />
+          <div class="process-content">
+            <h3>
+               & Take You Back To Freedom.</h3>
+             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, saepe praesentium. Dignissimos quibusdam </p>
+            <!-- <a href="#" class="btn">Learn More</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- how it works -->
+
+<section class="how-it-works">
+    <h2>HERE'S HOW IT WORKS:</h2>
+    <div class="card-container">
+        
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>Step #1</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p>TAKE THE PERIMENOPAUSE <strong>QUIZ</strong> TO SEE IF YOU QUALIFY</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>Step #2</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p>IF YES, RECEIVE AN <strong>INVITATION</strong> FOR A FREE COACHING CALL</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>Step #3</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p>SCHEDULE <strong>YOUR CALL</strong> AND CHANGE YOUR LIFE</p>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    <a href="" class=" btn btn-primary" style="margin-top: 30px; background-color:#b0184d">take the midlife quiz</a>
+</section>
+
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>What Women Are <span class="highlight">Saying</span></h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Finding The Gift of Menopause was truly life-changing. The resources and community support helped me transform what felt like a crisis into a journey of self-discovery and empowerment. I've never felt more confident and at peace with myself."</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="/api/placeholder/50/50" alt="Jennifer R.">
+                            </div>
+                            <div class="author-info">
+                                <h4>Jennifer R.</h4>
+                                <p>Community Member since 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"After struggling with symptoms and feeling alone in my experience, I found this amazing community. The holistic approaches I've learned have dramatically improved my quality of life, and the connections I've made with other women have been invaluable."</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="/api/placeholder/50/50" alt="Michelle K.">
+                            </div>
+                            <div class="author-info">
+                                <h4>Michelle K.</h4>
+                                <p>Workshop Participant</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Begin Your Journey Today</h2>
+            <p>Join thousands of women who have discovered the power and potential of this life transition. Our community is waiting to welcome you.</p>
+            <a href="#" class="btn btn-white">Join Now</a>
+            <a href="#" class="btn btn-outline-white">Explore Resources</a>
+        </div>
+    </section>
+
+    <!-- what you get Section -->
+    <section class="resources" id="resources">
+        <div class="container">
+            <h2>Live your life<span class="highlight">Again</span></h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-image">
+                        <img src="./images/women (menopause).jpg" alt="Happy">
+                    </div>
+                    <div class="resource-content">
+                        <span class="resource-tag">Happy</span>
+                        <h3>Fell Happy Again</h3>
+                        <p>fell happy again like you used to do</p>
+                        <!-- <a href="#" class="resource-link">Read More <i class="fas fa-arrow-right"></i></a> -->
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-image">
+                        <img src="./images/Butterfly-1 (menopause).jpg" alt="Freedom">
+                    </div>
+                    <div class="resource-content">
+                        <span class="resource-tag">Freedom</span>
+                        <h3>feel free again</h3>
+                        <p>Feel that freedom from everything like you used to. </p>
+                        <!-- <a href="#" class="resource-link">Read More <i class="fas fa-arrow-right"></i></a> -->
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-image">
+                        <img src="./images/Pillars-6 (menopause).jpg" alt="love again">
+                    </div>
+                    <div class="resource-content">
+                        <span class="resource-tag">Love</span>
+                        <h3>Feel Love again</h3>
+                        <p>Restore your relationships and rekindle the spark like it used to be.</p>
+                        <!-- <a href="#" class="resource-link">Read More <i class="fas fa-arrow-right"></i></a> -->
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-image">
+                         <img src="./images/Butterfly-1 (menopause).jpg" alt="love again">
+                     </div>
+                    <div class="resource-content">
+                        <span class="resource-tag" >Young</span>
+                        <h3>Feel young again</h3>
+                        <p>Feel the youthfulness and that joy for life like you used to. </p>
+                        <!-- <a href="#" class="resource-link">Read More <i class="fas fa-arrow-right"></i></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- how the program works -->
+     <section class="pillars-timeline">
+        <h1 style="text-align: center;">Here How the MIDLIFE program works</h1>
+    <h2>#1. <span>The 5 Pillars Framework</span></h2>
+
+    <div class="timeline-container">
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Element 1: Emotional Balance</h3>
+                <p>Master your emotional well-being to navigate midlife transitions smoothly.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Element 2: Life Structures</h3>
+                <p>Establish supportive routines and structures that empower your next chapter.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Element 3: Reconnecting With Your True Identity</h3>
+                <p>Rediscover your passions and values, and align your lifestyle accordingly.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Element 4: Boundaries & Healthy Relationships</h3>
+                <p>Strengthen relationships through clear boundaries and deeper connections.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Element 5: Embracing the Gift of Perimenopause</h3>
+                <p>Shift perspective and embrace the unique wisdom this stage brings.</p>
+            </div>
+        </div>
+          <h2>#2. <span>weekly one on one session</span></h2>
+          <p >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat neque provident nesciunt impedit veritatis, quo, ea sit possimus molestias </p>
+
+           <h2>#3. <span>A PERIMENOPAUSE COMMUNITY</span></h2>
+          <p >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat neque provident nesciunt impedit veritatis, quo, ea sit possimus molestias </p>
+    </div>
+</section>
+
+
+    <!-- FAQ section -->
+
+    <section class="faq-section">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+
+    <div class="faq-container">
+        <div class="faq-item">
+            <input type="checkbox" id="faq1">
+            <label for="faq1" class="faq-question">What is menopause?</label>
+            <div class="faq-answer">
+                <p>Menopause is the natural decline in reproductive hormones when a woman reaches her 40s or 50s. It marks the end of menstrual cycles.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq2">
+            <label for="faq2" class="faq-question">What are common symptoms?</label>
+            <div class="faq-answer">
+                <p>Hot flashes, night sweats, mood changes, weight gain, and sleep issues are some of the most common symptoms of menopause.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq3">
+            <label for="faq3" class="faq-question">Can menopause affect mental health?</label>
+            <div class="faq-answer">
+                <p>Yes! Hormonal changes during menopause can trigger anxiety, mood swings, and even mild depression in some cases.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container newsletter-container">
+            <h2>GET IN <span class="highlight">TOUCh</span></h2>
+            <p>Take the PERIMENOPAUSE QUIZ and get in right now </p>
+            <!-- <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Your email address">
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form> -->
+
+            <a href="" class="btn btn-primary">TAKE THE PERIMENOPAUSE QUIZ</a>
+
+            <p class="privacy-text">We respect your time and patience</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <!-- <div class="footer-top"> -->
+                <!-- <div class="footer-about">
+                    <a href="#" class="footer-logo">The Gift of Menopause</a>
+                    <p>Empowering women to embrace and thrive during the menopause transition with community support, resources, and holistic approaches.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#features">Our Approach</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div> -->
+                <!-- <div class="footer-resources">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Free Guides</a></li>
+                        <li><a href="#">Community Forum</a></li>
+                        <li><a href="#">Wellness Courses</a></li>
+                        <li><a href="#">Book Recommendations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> hello@giftofmenopause.com</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Wellness Way, <br>San Francisco, CA 94110</li>
+                    </ul>
+                </div>
+            </div> -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Gift of Menopause. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
