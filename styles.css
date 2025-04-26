@@ -506,207 +506,12 @@ transition: transform 0.3s ease;
 transform: translateX(5px);
 }
 
-/* how the program works */
-.pillars-timeline {
-max-width: 1200px;
-margin: 60px auto;
-padding: 20px;
-background: #fff;
-border-radius: 15px;
-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-}
-
-.pillars-timeline h2 {
-text-align: center;
-color: #333;
-font-size: 2rem;
-margin-bottom: 40px;
-}
-
-.pillars-timeline h2 span {
-color: #e6007e; /* vibrant pink */
-}
-
-.timeline-container {
-position: relative;
-margin-left: 20px;
-border-left: 4px solid #e6007e;
-padding-left: 20px;
-}
-
-.timeline-item {
-position: relative;
-margin-bottom: 30px;
-}
-
-.timeline-dot {
-width: 16px;
-height: 16px;
-background: #e6007e;
-border-radius: 50%;
-position: absolute;
-left: -30px;
-top: 5px;
-border: 4px solid white;
-box-shadow: 0 0 0 4px #e6007e33;
-}
-
-.timeline-content {
-background: #fff0f6;
-padding: 15px 20px;
-border-radius: 10px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.timeline-content h3 {
-margin-top: 0;
-color: #9c5283;
-margin-bottom: 8px;
-}
-
-.timeline-content p {
-margin: 0;
-color: #555;
-}
-
-/* Mobile Friendly */
-@media (max-width: 600px) {
-.timeline-container {
-border-left: 3px solid #e6007e;
-padding-left: 15px;
-}
-
-.timeline-dot {
-left: -25px;
-}
-}
-
-/* Faq section */
-
-.faq-section {
-max-width: 800px;
-margin: 50px auto;
-padding: 20px;
-background: #fff0f6;
-border-radius: 15px;
-box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-.faq-title {
-text-align: center;
-font-size: 2rem;
-color: #9c5283;
-margin-bottom: 30px;
-}
-
-.faq-container {
-display: flex;
-flex-direction: column;
-gap: 15px;
-}
-
-.faq-item {
-background: white;
-border-radius: 10px;
-overflow: hidden;
-box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.faq-item input {
-display: none;
-}
-
-.faq-question {
-display: block;
-padding: 20px;
-font-size: 1.1rem;
-font-weight: bold;
-cursor: pointer;
-position: relative;
-color: #333;
-}
-
-.faq-question::after {
-content: '+';
-position: absolute;
-right: 20px;
-transition: transform 0.3s ease;
-}
-
-.faq-item input:checked + .faq-question::after {
-transform: rotate(45deg);
-}
-
-.faq-answer {
-max-height: 0;
-overflow: hidden;
-transition: max-height 0.4s ease;
-padding: 0 20px;
-}
-
-.faq-item input:checked ~ .faq-answer {
-max-height: 500px;  /* Enough space for content */
-padding: 15px 20px;
-}
-
-.faq-answer p {
-margin: 0;
-color: #555;
-}
 
 
 
-/* === Newsletter Section === */
-.newsletter {
-    background-color: #f0e9e0;
-    padding: 60px 0;
-}
 
-.newsletter-container {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
 
-.newsletter h2 {
-    margin-bottom: 20px;
-}
 
-.newsletter p {
-    margin-bottom: 30px;
-}
-
-.newsletter-form {
-    display: flex;
-    margin-bottom: 20px;
-}
-
-.newsletter-input {
-    flex: 1;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 30px 0 0 30px;
-    font-size: 16px;
-}
-
-.newsletter-btn {
-    background-color: #9c5283;
-    color: white;
-    border: none;
-    border-radius: 0 30px 30px 0;
-    padding: 0 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.newsletter-btn:hover {
-    background-color: #864670;
-}
-
-.privacy-text {
-    font-size: 14px;
-    color: #777;
-}
 
 /* === Footer === */
 footer {
@@ -1179,13 +984,13 @@ footer {
   .turning-point-section blockquote {
     font-size: 1.7rem;
     font-style: italic;
-    color: #a62c55;
+    color: #9c5283;
     margin-bottom: 1.5rem;
   }
   
   .turning-point-section h3 {
     font-size: 1.8rem;
-    color: #b03a58;
+    color: #9c5283;
     margin-bottom: 1.5rem;
     font-weight: 600;
   }
@@ -1200,7 +1005,7 @@ footer {
     margin-top: 2rem;
     font-size: 1.3rem;
     font-weight: bold;
-    color: #8a2458;
+    color: #9c5283;
   }
   
   /* coaching invite section */
@@ -1219,7 +1024,7 @@ footer {
   
   .coaching-invite-wrapper h3 {
     font-size: 2.0rem;
-    color: #a83b52;
+    color: #9c5283;
     margin-bottom: 1.5rem;
     font-weight: 600;
   }
@@ -1271,7 +1076,7 @@ footer {
     align-items: center;
     justify-content: center;
     padding: 60px 20px;
-    background-color: #fff3f6;
+    background-color: #fff8f2;
     gap: 40px;
   }
   
@@ -1283,7 +1088,7 @@ footer {
   .program-content h2 {
     font-size: 2rem;
     margin-bottom: 15px;
-    color: #8a2458;
+    color: #9c5283;
   }
   
   .program-content h2 span {
@@ -1300,7 +1105,7 @@ footer {
   
   .power-text {
     font-weight: 600;
-    color: #7a1f4c;
+    color: #9c5283;
   }
   
   .program-button {
@@ -1333,7 +1138,7 @@ footer {
 
   /* transform section */
   .transform-journey {
-    background-color: #fff0f4;
+    background-color: #f4f1ec;
     padding: 60px 20px;
     font-family: 'Helvetica Neue', sans-serif;
     color: #372c35;
@@ -1349,12 +1154,12 @@ footer {
 
   .transform-journey .heading h2 {
     font-size: 2.2rem;
-    color: #7a1f4c;
+    color: #9c5283;
     margin-bottom: 10px;
   }
   .transform-journey .heading h3{
     font-size: 1.8rem;
-    color: #7a1f4c;
+    color: #9c5283;
     margin-bottom: -20px;
     
   }
@@ -1432,7 +1237,7 @@ footer {
   /* pillars section */
   .pillars-timeline {
     padding: 60px 20px;
-    background-color: #fff4f8;
+    background-color: #fff8f2;
     font-family: 'Segoe UI', sans-serif;
     color: #3d1f2c;
     max-width: 1500px;
@@ -1442,7 +1247,7 @@ footer {
   .pillars-timeline h2 {
     text-align: center;
     font-size: 2.3rem;
-    color: #922858;
+    color: #9c5283;
     margin-bottom: 20px;
     
   }
@@ -1457,7 +1262,7 @@ footer {
   .timeline {
     position: relative;
     margin-left: 20px;
-    border-left: 3px solid #bd356e;
+    border-left: 3px solid #9c5283;
     margin-left: 22vw;
   }
 
@@ -1474,7 +1279,7 @@ footer {
     left: -10px;
     width: 18px;
     height: 18px;
-    background-color: #bd356e;
+    background-color: #9c5283;
     border-radius: 50%;
     border: 3px solid #fff4f8;
   }
@@ -1552,7 +1357,7 @@ footer {
   }
   /* how ti works */
   .how-it-works-section {
-    background: #fdf6f9;
+    background: #fff8f2;
     padding: 60px 20px;
     font-family: 'Segoe UI', sans-serif;
     color: #641b3b;
@@ -1562,7 +1367,7 @@ footer {
   .how-it-works-section h2 {
     font-size: 2rem;
     margin-bottom: 40px;
-    color: #922858;
+    color: #9c5283;
   }
 
   .steps-wrapper {
@@ -1577,7 +1382,7 @@ footer {
     position: relative;
     margin-bottom: 40px;
     padding-left: 30px;
-    border-left: 3px solid #bd356e;
+    border-left: 3px solid #9c5283;
     animation: fadeInUp 0.6s ease;
     margin-left: 4rem;
   }
@@ -1587,7 +1392,7 @@ footer {
     position: absolute;
     left: -40px;
     top: 0;
-    background-color: #bd356e;
+    background-color: #9c5283;
     color: #fff;
     font-weight: bold;
     border-radius: 50%;
