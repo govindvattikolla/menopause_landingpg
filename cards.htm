@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perimenopause Symptoms Checker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f5ff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .symptoms-checker {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        
+        .symptoms-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .symptoms-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #5a287d;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .symptoms-title::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(230, 190, 255, 0.3);
+            border-radius: 50%;
+            top: -15px;
+            left: -20px;
+            z-index: -1;
+        }
+        
+        .symptoms-subtitle {
+            font-size: 1.2rem;
+            color: #7d5b9e;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .symptoms-container {
+            position: relative;
+        }
+        
+        .symptoms-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        
+        .symptom-item {
+            flex: 1 1 220px;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(125, 91, 158, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .symptom-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(125, 91, 158, 0.15);
+        }
+        
+        .symptom-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 50px 50px 0;
+            border-color: transparent #e6beff transparent transparent;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .symptom-item:hover .symptom-badge {
+            opacity: 1;
+        }
+        
+        .symptom-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #f5eeff 0%, #e6beff 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .symptom-item:hover .symptom-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #e6beff 0%, #ca8dff 100%);
+        }
+        
+        .symptom-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: #5a287d;
+        }
+        
+        .symptom-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #5a287d;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .symptom-item:hover .symptom-name {
+            color: #7d5b9e;
+        }
+        
+        .symptom-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .action-container {
+            text-align: center;
+            margin-top: 30px;
+            padding: 40px;
+            background: linear-gradient(135deg, #7d5b9e 0%, #5a287d 100%);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(90, 40, 125, 0.2);
+            color: white;
+        }
+        
+        .action-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .action-subtitle {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .action-button {
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background: white;
+            color: #5a287d;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .action-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .circle-decoration {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(230, 190, 255, 0.2);
+            z-index: -1;
+        }
+        
+        .circle-1 {
+            width: 200px;
+            height: 200px;
+            top: -50px;
+            left: -50px;
+        }
+        
+        .circle-2 {
+            width: 300px;
+            height: 300px;
+            bottom: -100px;
+            right: -100px;
+        }
+        
+        .circle-3 {
+            width: 150px;
+            height: 150px;
+            top: 40%;
+            right: 10%;
+        }
+        
+        @media (max-width: 768px) {
+            .symptoms-title {
+                font-size: 2rem;
+            }
+            
+            .symptoms-subtitle {
+                font-size: 1rem;
+            }
+            
+            .symptom-item {
+                flex: 1 1 100%;
+            }
+            
+            .action-title {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        .delay-6 { animation-delay: 0.6s; }
+        .delay-7 { animation-delay: 0.7s; }
+        .delay-8 { animation-delay: 0.8s; }
+        .delay-9 { animation-delay: 0.9s; }
+        .delay-10 { animation-delay: 1s; }
+        .delay-11 { animation-delay: 1.1s; }
+        .delay-12 { animation-delay: 1.2s; }
+        
+        /* Checkbox styling */
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .custom-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #e6beff;
+            border-radius: 4px;
+            display: inline-block;
+            position: relative;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .custom-checkbox svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            display: none;
+        }
+        
+        
+        .symptom-item:hover .custom-checkbox {
+            border-color: #7d5b9e;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <section class="symptoms-checker">
+        <div class="circle-decoration circle-1"></div>
+        <div class="circle-decoration circle-2"></div>
+        <div class="circle-decoration circle-3"></div>
+        
+        <header class="symptoms-header fade-in">
+            <h2 class="symptoms-title">Are You Noticing Any Of These Perimenopause Symptoms?</h2>
+          
+        </header>
+        
+        <div class="symptoms-container">
+            <div class="symptoms-list">
+                <div class="symptom-item fade-in delay-1">
+                    <div class="symptom-badge"></div>
+                    <div class="symptom-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19,5h-2V3a1,1,0,0,0-2,0V5H9V3A1,1,0,0,0,7,3V5H5A3,3,0,0,0,2,8v8a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V8A3,3,0,0,0,19,5Zm1,11a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V8A1,1,0,0,1,5,7H7V8A1,1,0,0,0,9,8V7h6V8a1,1,0,0,0,2,0V7h2a1,1,0,0,1,1,1Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="symptom-name">Irregular Periods</h3>
+                    
+                </div>
+                
+                <div class="symptom-item fade-in delay-2">
+                    <div class="symptom-badge"></div>
+                    <div class="symptom-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,3.57a1,1,0,0,0,1-1V1a1,1,0,0,0-2,0V2.57A1,1,0,0,0,12,3.57Z"/>
+                            <path d="M16,5a1,1,0,0,0,.71-.29l1-1a1,1,0,0,0-1.42-1.42l-1,1A1,1,0,0,0,16,5Z"/>
+                            <path d="M21,11H19.43a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z"/>
+                            <path d="M17.31,15.29a1,1,0,0,0-1.42,1.42l1,1a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z"/>
+                            <path d="M12,20.43a1,1,0,0,0-1,1V23a1,1,0,0,0,2,0V21.43A1,1,0,0,0,12,20.43Z"/>
+                            <path d="M6.69,15.29l-1,1a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l1-1a1,1,0,0,0-1.42-1.42Z"/>
+                            <path d="M4.57,12a1,1,0,0,0-1-1H2a1,1,0,0,0,0,2H3.57A1,1,0,0,0,4.57,12Z"/>
+                            <path d="M8,5a1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.42l-1-1A1,1,0,0,0,6.29,3.71Z"/>
+                            <path d="M12,6a6,6,0,1,0,6,6A6,6,0,0,0,12,6Zm0,10a4,4,0,1,1,4-4A4,4,0,0,1,12,16Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="symptom-name">Hot Flashes & Night Sweats</h3>
+                    
+                </div>
+                
+                <div class="symptom-item fade-in delay-3">
+                    <div class="symptom-badge"></div>
+                    <div class="symptom-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18,2H6A1,1,0,0,0,5,3V21a1,1,0,0,0,1,1H18a1,1,0,0,0,1-1V3A1,1,0,0,0,18,2ZM17,20H7V4H17Z"/>
+                            <path d="M13,9H11a1,1,0,0,0,0,2h2a1,1,0,0,0,0-2Z"/>
+                            <path d="M13,13H11a1,1,0,0,0,0,2h2a1,1,0,0,0,0-2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="symptom-name">Sudden Weight Gain</h3>
+                    
+                </div>
+                
+                <div class="symptom-item fade-in delay-4">
+                    <div class="symptom-badge"></div>
+                    <div class="symptom-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9,11h6a1,1,0,0,0,0-2H9a1,1,0,0,0,0,2Z"/>
+                            <path d="M9,7h6a1,1,0,0,0,0-2H9A1,1,0,0,0,9,7Z"/>
+                            <path d="M9,15h4a1,1,0,0,0,0-2H9a1,1,0,0,0,0,2Z"/>
+                            <path d="M19,2H5A3,3,0,0,0,2,5V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V5A3,3,0,0,0,19,2Zm1,17a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V5A1,1,0,0,1,5,4H19a1,1,0,0,1,1,1Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="symptom-name">Sleep Issues & Insomnia</h3>
+                  
+                </div>
+                
+                <div class="symptom-item fade-in delay-5">
+                    <div class="symptom-badge"></div>
+                    <div class="symptom-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.47,9.29l-4-4a1,1,0,0,0-1.42,1.42l4,4a1,1,0,0,0,1.42,0A1,1,0,0,0,17.47,9.29Z"/>
+                            <path d="M17,18H7a1,1,0,0,0,0,2H17a1,1,0,0,0,0-2Z"/>
+                            <path d="M7.2,11l4-4A1,1,0,0,0,9.8,5.6l-4,4a1,1,0,0,0,1.4,1.4Z"/>
+                            <path d="M19,4H5A3,3,0,0,0,2,7V17a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V7A3,3,0,0,0,19,4Zm1,13a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V7A1,1,0,0,1,5,6H19a1,1,0,0,1,1,1Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="symptom-name">Low Energy & Constant Fatigue</h3>
+                   
+                </div>
+                
+                <div class="symptom-item fade-in delay-6">
+                    <div class="symptom-badge"></div>
+                    <div class="symptom-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,11H19.93A8,8,0,0,0,13,4.07V3a1,1,0,0,0-2,0V4.07A8,8,0,0,0,4.07,11H3a1,1,0,0,0,0,2H4.07A8,8,0,0,0,11,19.93V21a1,1,0,0,0,2,0V19.93A8,8,0,0,0,19.93,13H21a1,1,0,0,0,0-2Zm-9,7A6,6,0,0,1,6,12a5.94,5.94,0,0,1,.86-3.09l7.23,7.23A5.94,5.94,0,0,1,12,18Zm5.14-3.91L9.91,6.86A5.94,5.94,0,0,1,12,6a6,6,0,0,1,6,6A5.94,5.94,0,0,1,17.14,14.09Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="symptom-name">Joint & Muscle Pain</h3>
+                </div>
+                
+                <div class="symptom-item fade-in delay-7">
+                    <div class="symptom-badge"></div>
+                    <div class="symptom-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.83,11.29,10.59,7.05a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41L12.71,12,9.17,15.54a1,1,0,0,0,0,1.41,1,1,0,0,0,.71.29,1,1,0,0,0,.71-.29l4.24-4.24A1,1,0,0,0,14.83,11.29Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="symptom-name">Mood Swings or Irritability</h3>
+                </div>
+                
+                <div class="symptom-item fade-in delay-8">
+                    <div class="symptom-badge"></div>
+                    <div class="symptom-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14,15h-4a1,1,0,0,0,0,2h4a1,1,0,0,0,0-2Z"/>
+                            <path d="M19,3H5A3,3,0,0,0,2,6v8a3,3,0,0,0,3,3H8v2H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2H16V17h3a3,3,0,0,0,3-3V6A3,3,0,0,0,19,3Zm1,11a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V6A1,1,0,0,1,5,5H19a1,1,0,0,1,1,1Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="symptom-name">Skin Dryness & Wrinkles</h3>
+                </div>
+                
+                <div class="symptom-item fade-in delay-9">
+                    <div class="symptom-badge"></div>
+                    <div class="symptom-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10,6A1,1,0,0,0,9,7v8a1,1,0,0,0,1.5.86l6-4a1,1,0,0,0,0-1.72l-6-4A1,1,0,0,0,10,6Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="symptom-name">Hair Thinning or Loss</h3>
+                   
+                </div>
+
+                <div class="symptom-item fade-in delay-9">
+                    <div class="symptom-badge"></div>
+                    <div class="symptom-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10,6A1,1,0,0,0,9,7v8a1,1,0,0,0,1.5.86l6-4a1,1,0,0,0,0-1.72l-6-4A1,1,0,0,0,10,6Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="symptom-name">anxiety</h3>
+                   
+                </div>
+
+                <div class="symptom-item fade-in delay-9">
+                    <div class="symptom-badge"></div>
+                    <div class="symptom-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10,6A1,1,0,0,0,9,7v8a1,1,0,0,0,1.5.86l6-4a1,1,0,0,0,0-1.72l-6-4A1,1,0,0,0,10,6Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="symptom-name">depression</h3>
+                   
+                </div>
+
+                <div class="symptom-item fade-in delay-9">
+                    <div class="symptom-badge"></div>
+                    <div class="symptom-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10,6A1,1,0,0,0,9,7v8a1,1,0,0,0,1.5.86l6-4a1,1,0,0,0,0-1.72l-6-4A1,1,0,0,0,10,6Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="symptom-name">Intimacy challenges</h3>
+                    
+                </div>
+
+
+            </div>
+            
+        </div>
+    </section>
+
+    
+
+</body>
+</html>
