@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     
 }
 
@@ -1756,6 +1756,7 @@ footer {
     display: flex;
     justify-content: center;
     margin-top: -2rem;
+    margin-left: -6rem;
     
     
   }
@@ -1847,6 +1848,7 @@ footer {
       text-align:center !important;
       display:flex;
       justify-content:center;
+      margin-left: 10px;
     }
   
     .coaching-invite-wrapper h2 {
