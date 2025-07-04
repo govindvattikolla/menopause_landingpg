@@ -1272,6 +1272,9 @@ animation: scroll 2s ease-in-out infinite;
    margin-left: -70px;
    text-align: center;
   }
+  .about .cta-subtext{
+    text-align:center
+  }
   
 }
 
@@ -1876,21 +1879,24 @@ footer {
   @media (max-width: 768px) {
     .coaching-invite-section {
       padding: 3rem 1rem;
-      text-align:center !important;
+      
       display:flex;
       justify-content:center;
       margin-left: 0.2rem;
+      text-align: center !important;
 
     }
   
     .coaching-invite-wrapper h2 {
       font-size: 1.8rem;
-      margin-bottom:0rem
+      margin-bottom:0rem;
+      text-align: center;
     }
   
     .coaching-invite-wrapper p {
       font-size: 1rem;
       line-height: 1.7;
+      text-align: center;
     }
   
     .cta-box {
@@ -1901,13 +1907,14 @@ footer {
     .coaching-invite-section .cta-button {
       font-size: 0.8rem;
       padding: 0.8rem 1.4rem;
-      margin-left: 3.5rem;
-      text-align:center;
+      margin-left: 6rem;
+      /* text-align:center; */
     }
   
-    .cta-subtext {
+    .coaching-invite-section .cta-subtext {
       font-size: 0.95rem;
-      text-align:center;
+      /* text-align:center; */
+      margin-left: 1em;
     }
   }
   
@@ -2543,7 +2550,7 @@ footer {
   }
   .feel-good-section h2 {
     font-size: 1.4rem;
-    text-align: left;
+    /* text-align: left; */
   }
   .feel-good-section p {
     font-size: 1rem;
