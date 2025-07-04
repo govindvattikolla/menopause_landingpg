@@ -1402,6 +1402,9 @@ footer {
     .mobile-toggle {
         display: block;
     }
+    .resources h2{
+      font-size:1.3rem
+    }
 
     .features-grid,
     .resources-grid {
@@ -1574,7 +1577,7 @@ footer {
   }
 
   .life-shift-section h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-align: left;
   }
 
@@ -2803,7 +2806,7 @@ footer {
     font-size: 1.2rem;
   }
   .embrace-midlife-section .sub-text {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
   .embrace-midlife-section .cta-btn {
     padding: 10px 20px;
