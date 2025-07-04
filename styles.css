@@ -239,8 +239,9 @@ header {
 }
 
 .hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
+    font-size: 1.2rem;
+    margin-bottom: 2.2rem;
+    margin-left: 0.5rem;
     max-width: 600px;
     color: #9c5283;  /* Rich Burgundy text for emphasis */
 }
@@ -508,12 +509,12 @@ animation: scroll 2s ease-in-out infinite;
     }
   
     .logo-text {
-      font-size: 18px;
+      font-size: 1.1rem;
     }
   
     .btn-hero {
-      font-size: 0.8rem;
-      padding: 12px 12px;
+      font-size: 0.75rem;
+      padding: 10px 10px;
       transform: none !important;
       padding-right: 0px;
     }
@@ -537,6 +538,15 @@ animation: scroll 2s ease-in-out infinite;
       flex-direction: column-reverse;
       text-align: center;
     }
+    .hero h1{
+      font-size: 3rem;
+      margin-top: 4rem;
+      margin-bottom: 3rem;
+      
+    }
+    .hero h3{
+      text-align:center
+    }
   
     .hero-content {
       margin-left: 0;
@@ -545,7 +555,7 @@ animation: scroll 2s ease-in-out infinite;
     }
   
     .hero-content p {
-      font-size: 16px;
+      font-size: 1.1rem;
     }
   
     .hero-image img {
@@ -553,12 +563,14 @@ animation: scroll 2s ease-in-out infinite;
       height: auto;
       margin: 0 auto;
       margin-top: -20px;
+      display:none
     }
   
     .btn {
       font-size: 14px;
       padding: 12px 20px;
       transform: none !important;
+      margin-top: 1rem;
     }
   
     .btn-primary:hover {
@@ -577,7 +589,8 @@ animation: scroll 2s ease-in-out infinite;
     }
   
     .scroll-down {
-      bottom: 15px;
+    
+      bottom: 20px;
       
     }
   
@@ -638,10 +651,10 @@ animation: scroll 2s ease-in-out infinite;
     color: #9c5283;
 }
 .features h2{
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   font-size: 2.5rem;
- margin-top: -3rem;
- margin-bottom: 3rem;
+ margin-top: -1.5rem;
+ margin-bottom: 2.5rem;
 }
 /* media queries */
 @media (max-width: 1080px) {
@@ -694,6 +707,9 @@ animation: scroll 2s ease-in-out infinite;
     text-align: center;
     padding: 20px;
   }
+  .feature-card:hover {
+    transform: translateY(0px);
+}
 
   .feature-icon {
     margin: 0 auto 20px auto; /* Center icon */
@@ -706,16 +722,16 @@ animation: scroll 2s ease-in-out infinite;
   }
 
   .features h2 {
-    font-size: 1.8rem;
-    margin-top: 0rem;
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
     margin-bottom: 2rem;
     text-align: center;
   }
   .features .highlight{
-    margin-bottom: -0.8rem;
+    margin-bottom: -0.6rem;
   }
   .features h3{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-align: center;
   }
   
@@ -949,6 +965,8 @@ animation: scroll 2s ease-in-out infinite;
   .symptoms-title {
     font-size: 2.2rem;
     margin-left: 0px;
+    margin-top: -0.2rem;
+    margin-bottom:-0.1rem
   }
 
   .symptoms-subtitle {
@@ -967,6 +985,7 @@ animation: scroll 2s ease-in-out infinite;
   .symptom-name,
   .symptom-description {
     text-align: center;
+    font-size:1rem
   }
 
   .action-container {
@@ -1058,6 +1077,7 @@ animation: scroll 2s ease-in-out infinite;
     margin-top: -2rem;
     
   }
+ 
   .symptoms-container{
    
     margin-top: -3rem;
@@ -1223,7 +1243,7 @@ animation: scroll 2s ease-in-out infinite;
   }
 
   .about-image img {
-    width: 90%;
+    width: 85%;
     height: auto;
     margin-top: -1rem;
   }
@@ -1250,6 +1270,7 @@ animation: scroll 2s ease-in-out infinite;
   }
   .about-content .btn-primary{
    margin-left: -70px;
+   text-align: center;
   }
   
 }
@@ -1564,11 +1585,13 @@ footer {
 @media (max-width: 768px) {
   .life-shift-section {
     flex-direction: column;
-    padding: 1.2rem 1rem;
+    padding: 3rem 1rem;
+   
+    
   }
 
   .life-shift-wrapper {
-    text-align: left;
+    text-align: center;
   }
 
   .life-shift-section h1 {
@@ -1585,6 +1608,9 @@ footer {
     font-size: 1.1rem;
     line-height: 1.5;
     text-align: left;
+  }
+  .life-shift-section .cta-text{
+    text-align:center
   }
 
   .cta-text {
@@ -1616,10 +1642,12 @@ footer {
   }
   
   .turning-point-section blockquote {
-    font-size: 2.1rem;
+    font-size: 2.2rem;
     color: #9c5283;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
     font-style: italic;
+   
   }
   
   .turning-point-section h3 {
@@ -1718,7 +1746,10 @@ footer {
   }
 
   .turning-point-section blockquote {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+  }
+  .turning-point-section .btn{
+    margin-left:2rem
   }
 
   .turning-point-section h3 {
@@ -1844,15 +1875,17 @@ footer {
   
   @media (max-width: 768px) {
     .coaching-invite-section {
-      padding: 2.5rem 1rem;
+      padding: 3rem 1rem;
       text-align:center !important;
       display:flex;
       justify-content:center;
-      margin-left: 10px;
+      margin-left: 0.2rem;
+
     }
   
     .coaching-invite-wrapper h2 {
       font-size: 1.8rem;
+      margin-bottom:0rem
     }
   
     .coaching-invite-wrapper p {
@@ -2022,8 +2055,12 @@ footer {
 
 /* For very small devices (max 480px) */
 @media (max-width: 480px) {
+  .program-section{
+    padding-bottom: 0%;
+  }
   .program-content h2 {
     font-size: 1.6rem;
+    text-align: center;
   }
 
   .program-content h2 span {
@@ -2032,6 +2069,7 @@ footer {
 
   .program-content p {
     font-size: 0.95rem;
+    
   }
 
   .program-section .program-button {
@@ -2232,7 +2270,7 @@ footer {
   
 /* pillars section */
 .pillars-section {
-  padding: 80px 20px;
+  padding: 90px 20px;
   background: #f8f4f0;
   text-align: center;
   font-family: 'Helvetica Neue', sans-serif;
@@ -2245,7 +2283,7 @@ footer {
 }
 
 .pillars-header h2 {
-  font-size: 2.4rem;
+  font-size: 2.3rem;
   color: #050405;
   margin-bottom: 20px;
 }
@@ -2264,6 +2302,7 @@ footer {
   margin: 0 auto;
   gap: 10px;
   flex-wrap: wrap;
+  
 }
 
 .pillar {
@@ -2385,6 +2424,7 @@ footer {
 
   .pillars-header p {
     font-size: 0.95rem;
+    margin-bottom: -0.2rem;
   }
   .pillars-header .highlight{
    padding-top: 10px;
@@ -2394,7 +2434,7 @@ footer {
   .pillars-container {
     flex-direction: column;
     gap: 15px;
-    padding-top: 22px;
+    padding-top: 20px;
     
   }
 
@@ -2498,7 +2538,8 @@ footer {
 @media (max-width: 480px) {
   .feel-good-section {
     padding: 50px 10px;
-    text-align: left;
+    text-align: center;
+    padding-bottom: 10px;
   }
   .feel-good-section h2 {
     font-size: 1.4rem;
@@ -2506,10 +2547,12 @@ footer {
   }
   .feel-good-section p {
     font-size: 1rem;
+    
   }
   .feel-good-section .cta-btn {
     font-size: 0.8rem;
     padding: 10px 15px;
+    
   }
 }
 
@@ -2699,7 +2742,7 @@ footer {
 }
 .how-it-works-section .btn-primary{
   margin-bottom: -5px;
-  margin-top: 0px;
+  margin-top: 0px !important;
   border: 1px solid rgb(6, 6, 6);
 }
 }
@@ -2751,7 +2794,7 @@ footer {
   border-radius: 8px;
   text-decoration: none;
   transition: background-color 0.3s ease;
-  margin-top: 30px;
+  margin-top: 1rem;
 }
 
 .embrace-midlife-section .cta-btn:hover {
