@@ -571,6 +571,7 @@ animation: scroll 2s ease-in-out infinite;
       padding: 12px 20px;
       transform: none !important;
       margin-top: 1rem;
+      text-align:center
     }
   
     .btn-primary:hover {
@@ -695,6 +696,7 @@ animation: scroll 2s ease-in-out infinite;
   .features{
     margin-top: -3rem;
     overflow-x: hidden;
+    padding-bottom:20px
   }
   .features-grid {
     grid-template-columns: 1fr;
@@ -1901,20 +1903,21 @@ footer {
   
     .cta-box {
       padding: 1.2rem;
+      display: flex;
+  justify-content: center;
     }
     
-  
-    .coaching-invite-section .cta-button {
-      font-size: 0.8rem;
-      padding: 0.8rem 1.4rem;
-      margin-left: 6rem;
-      /* text-align:center; */
-    }
+  .coaching-invite-section .cta-button {
+  font-size: 1rem;
+  padding: 0.8rem 0.8rem;
+  text-align: center;
+ display: block;
+}
   
     .coaching-invite-section .cta-subtext {
       font-size: 0.95rem;
-      /* text-align:center; */
-      margin-left: 1em;
+      text-align:center;
+      /* margin-left: 1em; */
     }
   }
   
