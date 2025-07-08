@@ -743,7 +743,7 @@ animation: scroll 2s ease-in-out infinite;
 .symptoms-checker {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 20px;
+  padding: 80px 30px;
   padding-bottom: 20px;
   background: linear-gradient(135deg, rgba(156, 82, 131, 0.05), rgba(156, 82, 131, 0.2));
   border-radius: 30px;
@@ -757,7 +757,7 @@ animation: scroll 2s ease-in-out infinite;
 }
 
 .symptoms-title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: black;
   margin-bottom: 40px;
