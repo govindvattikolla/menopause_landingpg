@@ -1264,7 +1264,7 @@ animation: scroll 2s ease-in-out infinite;
   .about-image img {
     width: 100%;
     height: auto;
-    margin-top: -5rem;
+    margin-top: -4rem;
   }
 
   .about-content {
@@ -1284,7 +1284,10 @@ animation: scroll 2s ease-in-out infinite;
     font-size: 0.95rem;
     text-align: left;
   }
-  .about-content h1,h3{
+  .about-content h1{
+    text-align: center;
+  }
+  .about-content h3{
     text-align: left;
   }
   .about-content .btn-primary{
@@ -1923,7 +1926,7 @@ width:80vw
     }
   
     .coaching-invite-wrapper p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       line-height: 1.7;
       text-align: left;
     }
@@ -1938,7 +1941,7 @@ width:80vw
   font-size: 1rem;
   padding: 0.8rem 0.8rem;
   text-align: center;
- display: block;
+ /* display: block; */
 }
   
     .coaching-invite-section .cta-subtext {
